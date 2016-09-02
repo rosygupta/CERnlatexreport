@@ -1,0 +1,44 @@
+\begin{thebibliography}{8}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[MAE()]{MAE}
+Metrics analytic engine.
+\newblock URL
+  \url{https://twiki.cern.ch/twiki/bin/viewauth/DSSGroup/MetricsAnalysisEngine}.
+
+\bibitem[cas()]{castor}
+Castor.
+\newblock URL \url{http://castor.web.cern.ch/}.
+
+\bibitem[coc()]{cockpit}
+Cockpit.
+\newblock URL
+  \url{https://twiki.cern.ch/twiki/bin/viewauth/DSSGroup/CockpitWebInterface}.
+
+\bibitem[dja()]{django}
+Django.
+\newblock URL
+  \url{https://docs.djangoproject.com/en/1.10/howto/custom-management-commands/}.
+
+\bibitem[gra({\natexlab{a}})]{grafana}
+Grafana, {\natexlab{a}}.
+\newblock URL \url{http://grafana.org/}.
+
+\bibitem[gra({\natexlab{b}})]{graphite}
+Graphite, {\natexlab{b}}.
+\newblock URL \url{https://github.com/tmm1/graphite}.
+
+\bibitem[gra({\natexlab{c}})]{graphitedocs}
+Graphite docs, {\natexlab{c}}.
+\newblock URL \url{http://graphite.readthedocs.io/en/latest/index.html}.
+
+\bibitem[mon()]{mon}
+Monitoring with graphite.
+\newblock URL
+  \url{https://www.safaribooksonline.com/library/view/monitoring-with-graphite/9781491916421/ch01.html}.
+
+\end{thebibliography}

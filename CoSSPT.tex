@@ -1,0 +1,195 @@
+%
+%% Please do not remove author note!
+%%%
+%%%% Created by Kacper B Sokol (k.sokol.2011 [at] my.bristol.ac.uk)
+%%%
+%% Please do not remove author note!
+%
+
+\pdfminorversion=4                                       % compatibility reasons
+\documentclass[aspectratio=169]{beamer}
+% \documentclass{beamer}
+
+\usepackage{etoolbox}
+\usepackage{changepage}
+
+\usepackage{lipsum}
+
+\usepackage{color}
+\definecolor{CERNish}{RGB}{000,083,161}
+\definecolor{CERNish-sup}{RGB}{192,192,192}
+
+\setbeamercolor{structure}{fg=CERNish, bg=CERNish-sup}
+
+% Slides background
+\usepackage{tikz}								 % opaque logo in the background
+\usebackgroundtemplate{
+  \vbox to \paperheight{\vspace{1.7\headheight}\hbox to \paperwidth{\includegraphics[height=.85\paperheight]{./gfx/image1.png}\hfil}\vfil}
+	% \tikz\node[opacity=0.25]{
+		% \mbox{~\\~\\[10cm]} \noindent \hspace*{-12.2mm} \vspace*{-3000mm} \includegraphics*[width=1.2\paperwidth]{./gfx/image1.png}%{./gfx/bg.png}
+		% ,height=\paperheight
+	% };
+}
+
+% Title page logo
+% \titlegraphic{
+% 	% \vspace*{1cm}
+% 	\mbox{ \hspace{0.697916667cm} \includegraphics[height=2cm]{./gfx/LogoOutline-Blue.png} \hspace{0.697916667cm} }
+% 	% \hspace*{4.75cm}~
+% 	\hspace*{3.25cm}~
+% 	% space is 1.697916667 * image height i.e. (1.697916667*2cm -2cm) = (3.395833334cm -2cm)/2 = 0.697916667
+% 	\includegraphics[height=2cm]{./gfx/openlab-transparent.png}
+% 	% collaboration logo
+% 	\vspace*{0.3cm}
+%   {
+%   \centering
+%   \includegraphics[height=.7cm]{./gfx/siemens-transparent.png}
+%   }
+% }
+
+\setbeamertemplate{navigation symbols}{}
+\usepackage{beamerthemeshadow}
+
+% Modify footer
+\makeatletter
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,left]{author in head/foot}
+    \usebeamerfont{date in head/foot}\hspace*{1.5em}\insertshortdate
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,right]{author in head/foot}
+    \usebeamerfont{author in head/foot}\insertshortauthor\hspace*{1.5em}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,left]{title in head/foot}
+    \usebeamerfont{title in head/foot}\hspace*{1.5em}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,right]{title in head/foot}
+    \usebeamerfont{title in head/foot}\insertframenumber\hspace*{1.5em}
+  \end{beamercolorbox}%
+  }%
+  \vskip0pt
+}
+\makeatother
+
+% Add logo to TitleFrame
+% \strut\insertframetitle\strut \hfill\includegraphics[width=1cm]{./gfx/openlab-transparent.png}
+% \usepackage{textpos}
+% \addtobeamertemplate{frametitle}{}{%
+% \begin{textblock*}{100mm}(.85\textwidth,-1cm)%
+% \includegraphics[height=1cm,width=2cm]{./gfx/openlab-transparent.png}%
+% \end{textblock*}%
+% }
+
+% References
+\usepackage{biblatex}
+\addbibresource{bibliography.bib}
+
+% Footer only frames
+\makeatletter
+\define@key{beamerframe}{foot}[true]{
+  \setbeamertemplate{footline}[]                  % \setbeamertemplate*{footline}
+  \setbeamertemplate{headline}[plain]             % \setbeamertemplate*{headline}
+  \def\beamer@entrycode{\vspace*{-\headheight}}
+}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\title{Presentation Title}
+\subtitle{Presentation Subtitle}
+\author{Author's Name}
+\institute{Author's Institute/Section}
+\date{\today}
+
+{
+\usebackgroundtemplate{
+  \vbox to \paperheight{\vfil\hbox to \paperwidth{\hfil\includegraphics[width=\paperwidth]{./gfx/image2.png}\hfil}\vfil}
+}
+\begin{frame}[plain]
+  \begin{minipage}{0.48\paperwidth}
+    \vspace*{8.5cm}\hspace*{0.6cm}\tiny Powered by \LaTeX. K.\ B.\ Sokol.%
+  \end{minipage}%
+  \begin{minipage}{0.42\paperwidth}
+    \vspace*{3.1cm}\titlepage%
+  \end{minipage}
+\end{frame}
+}
+
+\begin{frame}[plain]{Table of contents}%
+  % \hfill\parbox{.88\paperwidth}{\tableofcontents}
+  \begin{minipage}{13mm}
+    \vspace{0pt}
+    \hfill
+  \end{minipage}\begin{minipage}{0.9\textwidth}
+    \vspace{0pt}
+    \tableofcontents
+  \end{minipage}
+  % \begin{minipage}[t][\paperheight]{13mm}
+  %   ~
+  % \end{minipage}
+  % \begin{minipage}[t]{0.9\paperwidth}
+  %   \vspace{0pt}  
+  %   \tableofcontents
+  % \end{minipage}
+\end{frame}
+
+%%%% CONTENT %%%%
+
+\section{Section 1} 
+  \subsection{Subsection 1.1}
+  \begin{frame}[foot]{Title 1}
+  \begin{adjustwidth}{13mm}{0mm}
+    \lipsum[1]~\cite{articleExample}
+  \end{adjustwidth}
+  \end{frame}
+
+  \begin{frame}{Title 2}
+  \begin{adjustwidth}{13mm}{0mm}
+    \lipsum[2]
+  \end{adjustwidth}
+  \end{frame}
+
+  \subsection{Subsection 1.2}
+  \begin{frame}[plain]{Title 3}
+  \begin{adjustwidth}{13mm}{0mm}
+    \lipsum[3]
+  \end{adjustwidth}
+  \end{frame}
+
+\section{Section 2}
+  \subsection{Subsection 2.1}
+  \begin{frame}{Title 1}
+  \begin{adjustwidth}{13mm}{0mm}
+    \lipsum[4]
+  \end{adjustwidth}
+  \end{frame}
+
+  \begin{frame}{Title 2}
+  \begin{adjustwidth}{13mm}{0mm}
+    \lipsum[5]
+  \end{adjustwidth}
+  \end{frame}
+
+  \subsection{Subsection 2.2}
+  \begin{frame}[plain]{Title 3}
+  \begin{adjustwidth}{13mm}{0mm}
+    \lipsum[6]
+  \end{adjustwidth}
+  \end{frame}
+
+  \begin{frame}[t, allowframebreaks, plain]{References}
+  \begin{adjustwidth}{13mm}{0mm}
+    \printbibliography[heading=none]
+  \end{adjustwidth}
+  \end{frame}
+
+\end{document}
